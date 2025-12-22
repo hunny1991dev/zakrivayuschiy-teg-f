@@ -219,7 +219,7 @@ dialog::backdrop {
 
 .dialog__button {
   text-transform: uppercase;
-  border: var(--border);             
+  border: var(--border);
   background-color: var(--button-color);
   color: var(--button-color);
   padding-block: 10.5px;
