@@ -42,7 +42,7 @@
 
 }
 
-.header__tittle { 
+.header__tittle {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   margin-block-end: 16.5px;
 }
@@ -219,7 +219,7 @@ dialog::backdrop {
 
 .dialog__button {
   text-transform: uppercase;
-  border: var(--border);               
+  border: var(--border);             
   background-color: var(--button-color);
   color: var(--button-color);
   padding-block: 10.5px;
