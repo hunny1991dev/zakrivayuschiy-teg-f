@@ -14,7 +14,7 @@
   min-inline-size: 375px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: var(--font-weight-card-text);
+  font-variation-settings: 'wght' var(--font-weight-card-text);
   padding-block-start: 100px;
   background-color: var(--bg-color);
   background-image: var(--bg-image);
@@ -41,7 +41,7 @@
   margin-inline: clamp(0rem, calc(-8.143rem + 34.742vw), 23.125rem);
 
 }
-  
+
 .header__tittle { 
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   margin-block-end: 16.5px;
@@ -55,7 +55,7 @@
   font-size: 18px;
   margin-block: 4px;
   margin-inline: 10px;
-  font-weight: var(--font-weight-card-tittle);
+  font-variation-settings: 'wght' var(--font-weight-card-tittle);
 }
 
 .background-image {
@@ -113,15 +113,12 @@
 .decorated-text {
   position: absolute;
   color: black;
-  mix-blend-mode: hard-light; 
+  mix-blend-mode: hard-light;
   text-transform: uppercase;
   top: 25px;
   right: 25px;
   font-family: var(--accent-font);
   font-size: 14px;
-}
-
-.decorated-text {
   text-shadow:
   -1px 0 var(--text-stroke), 
   0 1px var(--text-stroke), 
@@ -137,8 +134,8 @@
   }
 }
 
-.content__card-list-item:not(:last-child) { 
-  margin-block-end: 52px; 
+.content__card-list-item:not(:last-child) {
+  margin-block-end: 52px;
 }
 
 .content__card-text {
@@ -222,7 +219,7 @@ dialog::backdrop {
 
 .dialog__button {
   text-transform: uppercase;
-  border: var(--border);                    
+  border: var(--border);               
   background-color: var(--button-color);
   color: var(--button-color);
   padding-block: 10.5px;
@@ -247,7 +244,7 @@ dialog::backdrop {
 .save-button {
   background-color: var(--button-color);
   color: var(--button-color);
-  display: flex;      
+  display: flex;
   justify-content: center;
   justify-self: center;
   align-items: center;
@@ -272,7 +269,7 @@ dialog::backdrop {
 .save-button:focus,
 .dialog__button:focus {
   outline: none;
-  box-shadow: 2px 2px 0 #000;  
+  box-shadow: 2px 2px 0 #000;
 }
 
 .card__like-button,
@@ -318,7 +315,7 @@ dialog::backdrop {
   --border: 2px solid rgba(0, 0, 0, 1);
   
   border: var(--border);
-  transition: border 0.3s ease; 
+  transition: border 0.3s ease;
 }
 
 .sparks {
@@ -389,10 +386,10 @@ dialog::backdrop {
   animation: sparks 0.3s ease-in 0.3s 1;
 } 
 
-@media (width <= 375px) { 
+@media (width <= 375px) {
   .dialog[open] {
     grid-template-columns: 60px 200px;
-    top: 236px; 
+    top: 236px;
   }
 
   .save-button {
