@@ -11,6 +11,7 @@
         linear-gradient(#e7e7e7 0.01%, #1a1a1a);
     --card-min-width: clamp(23.438rem, calc(16.285rem + 30.516vw), 43.75rem);
     --border: 2px solid rgba(0, 0, 0, 1);
+    --border-transparent: 2px solid rgba(0, 0, 0, 0);
     --text-stroke: rgba(255, 255, 255, 0.5);
     --button-color: rgba(255, 255, 255, 1);
     --contour-color: rgba(0, 0, 0, 1);
