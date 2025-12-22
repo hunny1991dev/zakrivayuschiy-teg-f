@@ -1,16 +1,406 @@
 /* Здесь вы напишете основную часть стилей страницы.
 
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ like-icon — для svg-иконки анимированного сердца 
+✦ card__like-button — для кнопки Like рядом с иконкой 
+✦ card__icon-button — для кнопки, оборачивающей иконку 
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+✦ button__text — для обозначения текстового элемента внутри кнопки 
 
 */
 
 .page {
-  min-inline-size: 320px;
+  min-inline-size: 375px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: var(--font-weight-card-text);
+  padding-block-start: 100px;
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  font-size: 18px;
 }
+
+.header {
+  padding-block: clamp(7.625rem, calc(7.449rem + 0.751vw), 8.125rem);
+  padding-inline: clamp(1rem, calc(-1.344rem + 10vw), 7.656rem);
+  margin-block-end: 100px;
+  font-family: var(--accent-font);
+  min-height: 327px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card {
+  min-width: var(--card-min-width);
+  border: var(--border);
+  background-color: var(--bg-color);
+  margin-inline: clamp(0rem, calc(-8.143rem + 34.742vw), 23.125rem);
+
+}
+  
+.header__tittle { 
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  margin-block-end: 16.5px;
+}
+
+.header__text {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.content__card-tittle {
+  font-size: 18px;
+  margin-block: 4px;
+  margin-inline: 10px;
+  font-weight: var(--font-weight-card-tittle);
+}
+
+.background-image {
+  position: relative;
+}
+
+.image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  aspect-ratio: 1/1;
+  border-top: var(--border);
+  border-bottom: var(--border)
+}
+
+.image-two {
+  filter: invert(0.8);
+}
+
+.image-three {
+  filter: sepia(80%);
+}
+
+.image-four {
+  filter: opacity(70%);
+}
+
+.image-five {
+   filter: contrast(110%);
+}
+
+.image-six {
+  filter: grayscale(1) contrast(125%) blur(2px);
+}
+
+.image-seven {
+  filter: hue-rotate(-35deg);
+}
+
+.image-eight {
+  filter: saturate(140%);
+}
+
+.content__card-list-item {
+  position: relative;
+}
+
+.content__card {
+  margin-block-start: 29px;
+  margin-inline: 25px;
+}
+
+.decorated-text {
+  position: absolute;
+  color: black;
+  mix-blend-mode: hard-light; 
+  text-transform: uppercase;
+  top: 25px;
+  right: 25px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+}
+
+.decorated-text {
+  text-shadow:
+  -1px 0 var(--text-stroke), 
+  0 1px var(--text-stroke), 
+  1px 0 var(--text-stroke), 
+  0 -1px var(--text-stroke);
+}
+
+@supports((text-stroke: 1pxvar(--text-stroke)) or (-webkit-text-stroke: 1px var(--text-stroke))) {
+  .decorated-text {
+    -webkit-text-stroke: 1px var(--text-stroke);
+    text-stroke: 1px var(--text-stroke);
+    text-shadow: none;
+  }
+}
+
+.content__card-list-item:not(:last-child) { 
+  margin-block-end: 52px; 
+}
+
+.content__card-text {
+  margin-block-end: 25px;
+  line-height: 21px;
+}
+
+/*КОНТЕЙНЕР КНОПКИ ЛАЙКА С СЕРДЦЕМ*/
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-block-end: 25px;
+  margin-inline-end: 25px;
+}
+
+/*КНОПКА ЛАЙКА*/
+.card__like-button {
+  background-color: var(--button-color);
+  color: var(--button-color);
+  inline-size: 129px;
+  block-size: 36px;
+  position: relative;
+  overflow: hidden;
+  border: var(--border);
+}
+
+/*КНОПКА ИКОНКИ СЕРДЦА*/
+.card__icon-button {
+  outline: none;
+  --border: 2px solid rgba(0, 0, 0, 0);
+
+  border: var(--border);
+  background-color: transparent;
+  block-size: 36px;
+  padding-inline: 4px;
+  transition: border 0.3s ease;
+}
+
+/*СВГ ИКОНКА СЕРДЦА*/
+.like-icon {
+  margin-block-start: -3px;
+  transform-origin: center;
+}
+
+/*ТЕКСТЫ КНОПОК*/
+.button__text {
+  font-size: 14px;
+  font-family: var(--accent-font), sans-serif;
+  line-height: 0.9;
+  position: relative;
+  mix-blend-mode: difference;
+}
+
+/*ДИАЛОГОВОЕ ОКНО*/
+dialog {
+  width: 341px;
+  padding: 0;
+}
+
+.dialog[open] {
+  display: grid;
+  grid-template-columns: 60px 234px;
+  margin-inline: auto;
+  margin-block: 0;
+  justify-content: center;
+  font-size: 14px;
+  block-size: 191px;
+  padding-block-start: 30px;
+  min-inline-size: clamp(341px, calc(336.775px + 1.127vw), 353px);
+  position: fixed;
+  top: 384.5px;
+  font-family: var(--accent-font), sans-serif;
+  text-transform: uppercase;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.3);
+  backdrop-filter: blur(7px);
+}
+
+.dialog__button {
+  text-transform: uppercase;
+  border: var(--border);                    
+  background-color: var(--button-color);
+  color: var(--button-color);
+  padding-block: 10.5px;
+  grid-column: 1 / 3;
+  align-self: start;
+  position: relative;
+  overflow: hidden;
+}
+
+.dialog__text {
+  align-self: start;
+  line-height: 1.5;
+}
+
+.floppy-big {
+  align-self: start;
+  width: 39px;
+  padding-block-start: 10px;
+}
+ 
+/*КНОПКА СОХРАНИТЬ НА ПАМЯТЬ*/
+.save-button {
+  background-color: var(--button-color);
+  color: var(--button-color);
+  display: flex;      
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  min-width: clamp(306px, calc(295.789px + 2.723vw), 335px);
+  min-block-size: 55px;
+  border: var(--border);
+  gap: 8px;
+  margin-block-start: 52px;
+  margin-block-end: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.floppy-small {
+  width: 21px;
+  color: var(--button-color);
+  mix-blend-mode: difference;
+}
+
+/*АНИМАЦИЯ ФОКУСА КНОПКИ ЛАЙКА/ КНОПКИ СОХРАНИТЬ НА ПАМЯТЬ/ КНОПКИ ОК*/
+.card__like-button:focus,
+.save-button:focus,
+.dialog__button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 #000;  
+}
+
+.card__like-button,
+.save-button,
+.dialog__button {
+  transition: box-shadow 0.3s ease;
+}
+
+/*ДОБАВКА ПСЕВДОЭЛЕМЕНТА КНОПКИ ЛАЙКА/ КНОПКИ СОХРАНИТЬ НА ПАМЯТЬ/ КНОПКИ ОК*/
+.card__like-button::before,
+.save-button::before,
+.dialog__button::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out ;
+}
+
+/*АНИМАЦИЯ ЗАЛИВКИ ПРИ ХОВЕРЕ КНОПКИ ЛАЙКА/ КНОПКИ СОХРАНИТЬ НА ПАМЯТЬ/ КНОПКИ ОК*/
+.card__like-button:hover::before,
+.save-button:hover::before,
+.dialog__button:hover::before {
+  transform: translateX(0);
+}
+
+/*АНИМАЦИЯ КУРСОРА ПРИ ХОВЕРЕ КНОПКИ ЛАЙКА/ КНОПКИ СОХРАНИТЬ НА ПАМЯТЬ/ КНОПКИ ОК*/
+.card__like-button:hover,
+.save-button:hover,
+.dialog__button:hover {
+  cursor: pointer;
+}
+
+/*АНИМАЦИЯ КНОПКИ СЕРДЦА ПРИ ФОКУС-ВИЗИБЛ*/
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  --border: 2px solid rgba(0, 0, 0, 1);
+  
+  border: var(--border);
+  transition: border 0.3s ease; 
+}
+
+.sparks {
+  opacity: 0;
+}
+
+/*СОСТОЯНИЕ ПО УМОЛЧАНИЮ У СВГ ИКОНКИ СЕРДЦА*/
+.contour {
+  transition: fill 0.1s linear 0s;
+}
+
+.core {
+  transition: fill 0.3s linear 0.03s;
+}
+
+.main-body {
+  transition: fill  0.3s linear 0s;
+}
+
+/*АНИМЦИЯ ПРИ ХОВЕРЕ*/
+.like-icon:hover {
+  cursor: pointer;
+}
+
+.like-icon:hover .core {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+/*АНИМАЦИЯ ПРИ ЗАЖАТИИ*/
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+/*АНИМАЦИЯ ПРИ КЛИКЕ*/
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: heart 0.3s ease-in 0.1s 1;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s 1;
+} 
+
+@media (width <= 375px) { 
+  .dialog[open] {
+    grid-template-columns: 60px 200px;
+    top: 236px; 
+  }
+
+  .save-button {
+    flex-direction: column;
+    min-block-size: 84px;
+  }
+
+  .floppy-small {
+    width: 28px;
+  }
+}  
