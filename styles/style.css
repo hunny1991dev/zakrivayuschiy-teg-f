@@ -201,6 +201,7 @@ dialog {
   display: grid;
   grid-template-columns: 60px 234px;
   margin-inline: auto;
+  min-block-size: 191px;
   justify-content: center;
   align-self: center;
   font-size: 14px;
@@ -212,7 +213,7 @@ dialog {
 }
 
 dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.7);
+  background-color: rgb(0 0 0 / 0.75);
 }
 
 /*КНОПКА ОК*/
