@@ -76,7 +76,7 @@
   filter: invert(0.8);
 }
 
-.sepia{
+.sepia {
   filter: sepia(80%);
 }
 
@@ -146,6 +146,7 @@
   border: var(--border);
   overflow: hidden;
   position: relative;
+  transition: box-shadow 0.3s ease;
 }
 
 /*КОНТЕЙНЕР КНОПКИ ЛАЙКА С СЕРДЦЕМ*/
@@ -256,10 +257,6 @@ dialog::backdrop {
 .button:focus {
   outline: none;
   box-shadow: 2px 2px 0 #000;
-}
-
-.button {
-  transition: box-shadow 0.3s ease;
 }
 
 /*ДОБАВКА ПСЕВДОЭЛЕМЕНТА КНОПКИ ЛАЙКА/ КНОПКИ СОХРАНИТЬ НА ПАМЯТЬ/ КНОПКИ ОК*/
